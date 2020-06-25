@@ -126,6 +126,7 @@ INSTALLED_APPS = [
     # 'allauth.socialaccount.providers.xing',
     # 'allauth.socialaccount.providers.yandex',
     # 'allauth.socialaccount.providers.ynab',
+    'django_q',
     'core',
 ]
 
@@ -215,3 +216,13 @@ USE_TZ = True
 
 STATIC_URL = "/staticfiles/"
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+
+Q_CLUSTER = {
+    'name': 'DjangORM',
+    'workers': 2,
+    'timeout': 90,
+    'retry': 120,
+    'queue_limit': 50,
+    'bulk': 10,
+    'orm': 'default'
+}
