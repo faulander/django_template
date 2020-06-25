@@ -145,3 +145,9 @@ Q_CLUSTER = {
     'bulk': 10,
     'orm': 'default'
 }
+
+## DJANGO DEBUG TOOLBAR
+if DEBUG:
+    INSTALLED_APPS += ['debug_toolbar',]
+    MIDDLEWARE += ['debug_toolbar.middleware.DebugToolbarMiddleware',]
+    INTERNAL_IPS = []
